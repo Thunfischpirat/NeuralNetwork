@@ -5,17 +5,16 @@ import numpy as np
 
 class TestLinearLayer(TestCase):
     def setUp(self):
-        np.random.seed(32)
         self.layer = LinearLayer(3, 2)
-        self.layer.W = np.random.randint(0, 5, self.layer.W.shape)
-        self.layer.b = np.random.randint(0, 5, self.layer.b.shape)
+        self.layer.W = np.array([[1, 2, 1], [2, 2, 2]])
+        self.layer.b = np.array([1, 2])
 
     def test_forward(self):
         # Test shape
-        data = np.random.randint(0, 9, (4, 3))
+        data = np.array([1,2,3])
         output = self.layer.forward(data)
         # Validate output shape.
-        self.assertEqual(output.shape, (4, 2))
+        self.assertEqual(output.shape, (2,))
         # Validate output values.
-        expected_output = np.array([[24, 20], [43, 32], [24, 16], [15, 10]])
+        expected_output = np.array([9, 14])
         self.assertTrue(np.allclose(output, expected_output))
