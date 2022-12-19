@@ -27,7 +27,9 @@ class TestReLU(TestCase):
         """Test the backward pass of the ReLU activation function."""
         # Test shape
         data = np.array([-1, 0, 1])
-        output = self.relu.backward(data)
+        grad = np.array([1, 1, 1])
+        _ = self.relu.forward(data)
+        output = self.relu.backward(grad)
         # Validate output shape.
         self.assertEqual(output.shape, (3,))
         # Validate output values.
@@ -57,7 +59,9 @@ class TestLeakyReLU(TestCase):
         """Test the backward pass of the LeakyReLU activation function."""
         # Test shape
         data = np.array([-1, 0, 1])
-        output = self.leaky_relu.backward(data)
+        grad = np.array([1, 1, 1])
+        _ = self.leaky_relu.forward(data)
+        output = self.leaky_relu.backward(grad)
         # Validate output shape.
         self.assertEqual(output.shape, (3, ))
         # Validate output values.
