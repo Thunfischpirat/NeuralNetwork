@@ -1,5 +1,5 @@
 from unittest import TestCase
-from layers.linear_layer import LinearLayer
+from layers.linear import LinearLayer
 import numpy as np
 
 
