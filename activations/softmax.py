@@ -16,6 +16,5 @@ class Softmax():
 
     def backward(self, y):
         """ Backward pass of Softmax activation function. """
-        # Create diagonal matrices for entries of y.
         jacobian = np.diag(y) - np.outer(y, y)
         return jacobian
