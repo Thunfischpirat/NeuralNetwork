@@ -7,7 +7,7 @@ class LinearLayer():
         self.b = np.random.randn(output_dim)
 
     def forward(self, x):
-        return np.dot(x, self.W.T) + self.b
+        return np.dot(self.W,x) + self.b
 
 
 
