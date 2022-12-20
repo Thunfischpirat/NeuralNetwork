@@ -4,6 +4,10 @@ import numpy as np
 
 class Softmax():
     """ Softmax activation function. """
+    def __init__(self):
+        """ Initialize Softmax activation function. """
+        self.trainable = False
+
     def forward(self, x):
         """ Forward pass of Softmax activation function. """
         z = x - np.max(x)
@@ -17,4 +21,4 @@ class Softmax():
     def backward(self, y):
         """ Backward pass of Softmax activation function. """
         jacobian = np.diag(y) - np.outer(y, y)
-        return jacobian
+        return np.dot(jacobian,y)
