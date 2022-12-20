@@ -4,9 +4,9 @@ import numpy as np
 
 class LinearLayer():
     def __init__(self, input_dim, output_dim):
-        """ Initialize LinearLayer. """
-        self.W = np.random.randn(output_dim, input_dim)
-        self.b = np.random.randn(output_dim)
+        """ Initialize LinearLayer with He-method. """
+        self.W = np.random.randn(output_dim, input_dim) * np.sqrt(2 / input_dim)
+        self.b = np.random.randn(output_dim) * np.sqrt(2 / input_dim)
         self.trainable = True
 
     def forward(self, x):
