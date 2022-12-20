@@ -4,6 +4,9 @@ import numpy as np
 
 class ReLU():
     """ ReLU activation function. """
+    def __init__(self):
+        """ Initialize Softmax activation function. """
+        self.trainable = False
     def forward(self, x):
         """ Forward pass of ReLU activation function. """
         self.input = x
@@ -22,6 +25,7 @@ class LeakyReLU():
     def __init__(self, alpha: float=0.01):
         """ Initialize LeakyReLU activation function. """
         self.alpha = alpha
+        self.trainable = False
 
     def forward(self, x):
         """ Forward pass of LeakyReLU activation function. """
