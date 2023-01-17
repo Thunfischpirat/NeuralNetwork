@@ -18,7 +18,6 @@ if __name__ == "__main__":
 
     # Create a dataset
     Data, labels = load_iris(return_X_y=True)
-    # Normalize data
     # one hot encode the labels
     labels = np.eye(3)[labels]
 
